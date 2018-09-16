@@ -3,38 +3,48 @@ function form_validation() {
 	var l_name = document.forms['MyForm']['l-name'].value;
 	var email = document.forms['MyForm']['email'].value;
 	var phone = document.forms['MyForm']['phone'].value;
-	var status = document.forms['MyForm']['status'].value;
+	// var status = document.forms['MyForm']['status'].checked = false;
+
 	// var l_name = document.forms['MyForm']['l-name'].value;
-	console.log(f_name);
-	console.log(l_name);
+	// console.log(f_name);
+	// console.log(l_name);
 	if( f_name == "" ) {
 		alert("Please Enter First Name");
 		return false;
 	}
 	if( l_name == "" ) {
-		alert("Please Last Password");
+		alert("Please Enter Last Name");
 		return false;
 	}
-	
-	/* Store data on local storage*/
+	if( email == "" ) {
+		alert("Please Enter Email");
+		return false;
+	}
 
-	// var fnamesArr = [];  
-	// var lnamesArr = [];  
-	// var emailArr = [];  
-	// var phoneArr = [];  
-	// var statusArr = [];  
-	
-	// fnamesArr.push(f_name);
-	// localStorage.setItem('First_Name', JSON.stringify(fnamesArr));  
+	// if( status == "" ) {
+	// 	alert("Please Select User Status");
+	// 	return false;
+	// }
 
-	// lnamesArr.push(l_name);
-	// localStorage.setItem('Last_Name', JSON.stringify(lnamesArr));  
 
-	localStorage.setItem("First_Name", f_name);
-	localStorage.setItem("Last_Name", l_name);
-	localStorage.setItem("email", email);
-	localStorage.setItem("phone", phone);
-	localStorage.setItem("status", status);
+	let namesArr = localStorage.getItem('fname') ? JSON.parse(localStorage.getItem('fname')) : [];  
+	namesArr.push(f_name);
+	localStorage.setItem('fname', JSON.stringify(namesArr));  
 
+	let lnamesArr = localStorage.getItem('lname') ? JSON.parse(localStorage.getItem('lname')) : [];  
+	lnamesArr.push(l_name);
+	localStorage.setItem('lname', JSON.stringify(lnamesArr));  
+
+	let emailArr = localStorage.getItem('email') ? JSON.parse(localStorage.getItem('email')) : [];  
+	emailArr.push(email);
+	localStorage.setItem('email', JSON.stringify(emailArr));  
+
+	let phoneArr = localStorage.getItem('phone') ? JSON.parse(localStorage.getItem('phone')) : [];  
+	phoneArr.push(phone);
+	localStorage.setItem('phone', JSON.stringify(phoneArr));
+
+	let statusArr = localStorage.getItem('status') ? JSON.parse(localStorage.getItem('status')) : [];  
+	statusArr.push(status);
+	localStorage.setItem('status', JSON.stringify(statusArr));  
 }
 

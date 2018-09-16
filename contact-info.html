@@ -22,36 +22,90 @@
 					</li>
 				</ul>
 			</div>
-			<div class="login-wrap"> 
-				<h3>Contact Form</h3>
-				 <table>
-				 	<tr>
-				 	<th>First Name</th>	
-				 	<th>Last Name</th>
-				 	<th>Email</th>	
-				 	<th>Phone</th>	
-				 	<th>Status</th>	
-				 	</tr>
-				 	<tr>
-					 <td id="First_Name"></td>
-					 <td id="Last_Name"></td>
-					 <td id="email"></td>
-					 <td id="phone"></td>
-					 <td id="status"></td>
-					</tr>
-				 </table>
+			<div class="login-wrap">
+				<h3>User Data</h3>
+				<div class="contact-wrap">
+					<ul id="fnameList">
+					<li>First Name</li>
+					</ul>
+
+					<ul id="lnameList">
+					<li>Last Name</li>
+					</ul>
+
+					<ul id="emailList">
+					<li>Email</li>
+					</ul>
+
+					<ul id="phoneList">
+					<li>Phone</li>
+					</ul>
+
+					<ul id="ustatusList">
+					<li>Status</li>
+					</ul>
+				</div>
+				
 			</div>
+			
 		</div>
 	</div>
 </div>
 
-
 <script>
-	 document.getElementById("First_Name").innerHTML = localStorage.getItem("First_Name");
-	 document.getElementById("Last_Name").innerHTML = localStorage.getItem("Last_Name");
-	 document.getElementById("email").innerHTML = localStorage.getItem("email");
-	 document.getElementById("phone").innerHTML = localStorage.getItem("phone");
-	 document.getElementById("status").innerHTML = localStorage.getItem("status");
+
+   		let i = JSON.parse(localStorage.getItem('fname'));
+   		var iterator = i.values();
+   		
+   		for (let letter of iterator) {
+  			 var h = document.createElement("li");
+    		 var t = document.createTextNode( letter );
+    		  h.appendChild(t);
+    		  document.getElementById("fnameList").appendChild(h);
+		} 
+
+		let j = JSON.parse(localStorage.getItem('lname'));
+   		var lname = j.values();
+   		
+   		for (let lnameList of lname) {
+  			 var hh = document.createElement("li");
+    		 var tt = document.createTextNode( lnameList );
+    		  hh.appendChild(tt);
+    		  document.getElementById("lnameList").appendChild(hh);
+		} 
+
+		let k = JSON.parse(localStorage.getItem('email'));
+   		var email = k.values();
+   		
+   		for (let emailList of email) {
+  			 var kk = document.createElement("li");
+    		 var jj = document.createTextNode( emailList );
+    		  kk.appendChild(jj);
+    		  document.getElementById("emailList").appendChild(kk);
+		} 
+
+		let l = JSON.parse(localStorage.getItem('phone'));
+   		var phone = l.values();
+   		console.log(phone);
+   		
+   		for (let phoneList of phone) {
+  			 var ll = document.createElement("li");
+    		 var mm = document.createTextNode( phoneList );
+    		  ll.appendChild(mm);
+    		  document.getElementById("phoneList").appendChild(ll);
+		} 
+
+		let x = JSON.parse(localStorage.getItem('status'));
+   		var ustatus = x.values();
+   		for (let ustatusList of ustatus) {
+  			 var bb = document.createElement("li");
+    		 var dd = document.createTextNode( ustatusList );
+    		 // console.log(dd);
+    		  bb.appendChild(dd);
+    		  document.getElementById("ustatusList").appendChild(bb);
+		} 
+
+
 </script>
 
 </body>
