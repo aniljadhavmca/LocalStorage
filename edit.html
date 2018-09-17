@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Information</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+<div class="container"> 
+	<div class="main">
+		<h1>Contact Infomration Application</h1>
+		<div class="welcome-wrap">
+			<div class="sidebar">
+				<h3>Dashboard Menus</h3>
+				<ul>
+					<li>
+						<a href="index.html">Add Contact</a>
+					</li>
+					<li>
+						<a href="contact-info.html">Contact List</a>
+					</li>
+				</ul>
+			</div>
+			<div class="login-wrap">
+				<h3>User Data</h3>
+				<div class="contact-wrap">
+					<ul id="fnameList">
+					<li>First Name</li>
+					</ul>
+
+					<ul id="lnameList">
+					<li>Last Name</li>
+					</ul>
+
+					<ul id="emailList">
+					<li>Email</li>
+					</ul>
+
+					<ul id="phoneList">
+					<li>Phone</li>
+					</ul>
+
+					<ul id="ustatusList">
+					<li>Status</li>
+					</ul>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<script>
+
+   		let i = JSON.parse(localStorage.getItem('fname'));
+
+   		console.log( i );
+
+   		// var nn = i.indexOf("Nilesh");
+   		// console.log(nn);
+
+   		var iterator = i.values();		
+
+   		for (let letter of iterator) {
+  			 var h = document.createElement("input");
+    		     h.setAttribute("value", letter);
+    		     h.setAttribute("name", letter);
+    		     console.log( h );
+    		 	document.getElementById("fnameList").appendChild(h);
+		} 
+
+		let j = JSON.parse(localStorage.getItem('lname'));
+   		var lname = j.values();
+   		
+   		for (let lnameList of lname) {
+  			 var hh = document.createElement("input");
+    		     hh.setAttribute("value", lnameList );
+    		     document.getElementById("lnameList").appendChild(hh);
+		} 
+
+		let k = JSON.parse(localStorage.getItem('email'));
+   		var email = k.values();
+   		
+   		for (let emailList of email) {
+  			 var kk = document.createElement("input");
+    		     kk.setAttribute("value", emailList );
+    		  	 document.getElementById("emailList").appendChild(kk);
+		} 
+
+		let l = JSON.parse(localStorage.getItem('phone'));
+   		var phone = l.values();
+   		// console.log(phone);
+   		
+   		for (let phoneList of phone) {
+  			 var ll = document.createElement("input");
+  			 	 ll.setAttribute("value", phoneList );
+    		  document.getElementById("phoneList").appendChild(ll);
+		} 
+
+		let x = JSON.parse(localStorage.getItem('status'));
+   		var ustatus = x.values();
+   		for (let ustatusList of ustatus) {
+  			 var bb = document.createElement("input");
+    		 	 bb.setAttribute("value", ustatusList );
+    		     document.getElementById("ustatusList").appendChild(bb);
+		}
+
+		// update_fname = document.getElementsByName("animal");
+ 
+
+</script>
+
+</body>
+</html>
