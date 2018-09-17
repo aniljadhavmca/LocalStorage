@@ -86,7 +86,7 @@
 
 		let l = JSON.parse(localStorage.getItem('phone'));
    		var phone = l.values();
-   		console.log(phone);
+   		// console.log(phone);
    		
    		for (let phoneList of phone) {
   			 var ll = document.createElement("li");
@@ -96,7 +96,9 @@
 		} 
 
 		let x = JSON.parse(localStorage.getItem('status'));
+		console.log( x );
    		var ustatus = x.values();
+   		console.log( ustatus );
    		for (let ustatusList of ustatus) {
   			 var bb = document.createElement("li");
     		 var dd = document.createTextNode( ustatusList );

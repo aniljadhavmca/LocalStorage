@@ -3,10 +3,8 @@ function form_validation() {
 	var l_name = document.forms['MyForm']['l-name'].value;
 	var email = document.forms['MyForm']['email'].value;
 	var phone = document.forms['MyForm']['phone'].value;
-	// var status = document.forms['MyForm']['status'].checked = false;
+	var status = document.forms['MyForm']['status'].value;
 
-	// var l_name = document.forms['MyForm']['l-name'].value;
-	// console.log(f_name);
 	// console.log(l_name);
 	if( f_name == "" ) {
 		alert("Please Enter First Name");
@@ -21,10 +19,10 @@ function form_validation() {
 		return false;
 	}
 
-	// if( status == "" ) {
-	// 	alert("Please Select User Status");
-	// 	return false;
-	// }
+	if( status == "" ) {
+		alert("Please Select User Status");
+		return false;
+	}
 
 
 	let namesArr = localStorage.getItem('fname') ? JSON.parse(localStorage.getItem('fname')) : [];  
